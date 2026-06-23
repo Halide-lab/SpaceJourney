@@ -104,3 +104,113 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+
+let recommendations = [
+
+  {
+    place:"Vondelpark",
+    category:"Nature",
+    text:"Perfect for a quiet afternoon walk."
+  },
+
+  {
+    place:"Café de Jaren",
+    category:"Coffee",
+    text:"Great canal views and relaxed atmosphere."
+  }
+
+];
+const submitBtn =
+document.querySelector(".journal button");
+
+const bubbleContainer =
+document.getElementById("bubbleContainer");
+
+submitBtn.addEventListener("click", () => {
+
+  const place =
+  document.querySelector('input').value;
+
+  const category =
+  document.querySelector('select').value;
+
+  const text =
+  document.querySelector('textarea').value;
+
+  if(!place || !text) return;
+
+  const bubble =
+  document.createElement("div");
+
+  bubble.className =
+  "recommendation-bubble";
+
+  bubble.style.left = "0px";
+
+  bubble.innerHTML = `
+    <h4>${place}</h4>
+    <strong>${category}</strong>
+    <p>${text}</p>
+  `;
+
+  bubbleContainer.appendChild(bubble);
+    recommendations.push({
+    place,
+    category,
+    text
+  });
+
+  renderRecommendations();
+
+    setTimeout(() => {
+      bubble.remove();
+    }, 12000);
+
+  });
+
+const panel =
+document.getElementById("recommendationPanel");
+
+const openBtn =
+document.getElementById("seeAllBtn");
+
+const closeBtn =
+document.getElementById("closePanel");
+
+openBtn.addEventListener("click", () => {
+  panel.classList.add("open");
+});
+
+closeBtn.addEventListener("click", () => {
+  panel.classList.remove("open");
+});
+
+function renderRecommendations(){
+
+  const list =
+  document.getElementById("recommendationList");
+
+  list.innerHTML = "";
+
+  recommendations.forEach(item => {
+
+    const div =
+    document.createElement("div");
+
+    div.className =
+    "recommendation-item";
+
+    div.innerHTML = `
+      <h4>${item.place}</h4>
+      <small>${item.category}</small>
+      <p>${item.text}</p>
+    `;
+
+    list.appendChild(div);
+
+  });
+
+}
+
+renderRecommendations();

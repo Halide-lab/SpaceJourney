@@ -1,0 +1,164 @@
+body {
+  background: #050505;
+  color: white;
+}
+
+.back-btn {
+  position: fixed;
+  top: 35px;
+  left: 35px;
+  z-index: 50;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: rgba(0,0,0,.55);
+  padding: 14px 22px;
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+.museum-page {
+  min-height: 100vh;
+  padding: 90px 70px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.55)),
+    url("../images/museum.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.museum-hero {
+  max-width: 850px;
+  margin-bottom: 45px;
+}
+
+.museum-kicker {
+  color: #10d3d3;
+  font-family: Arial, sans-serif;
+  letter-spacing: 7px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.museum-hero h1 {
+  font-size: clamp(60px, 8vw, 130px);
+  line-height: .85;
+  letter-spacing: -5px;
+  margin-bottom: 30px;
+}
+
+.museum-hero p {
+  font-size: 23px;
+  color: #e5e5e5;
+  line-height: 1.4;
+  max-width: 650px;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 45px;
+}
+
+.filter-btn {
+  background: rgba(255,255,255,.08);
+  color: white;
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 14px 24px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #10d3d3;
+  color: #000;
+  border-color: #10d3d3;
+}
+
+.museum-row {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  padding-bottom: 35px;
+  scroll-snap-type: x mandatory;
+}
+
+.museum-row::-webkit-scrollbar {
+  height: 10px;
+}
+
+.museum-row::-webkit-scrollbar-track {
+  background: rgba(255,255,255,.08);
+}
+
+.museum-row::-webkit-scrollbar-thumb {
+  background: #10d3d3;
+}
+
+.museum-card {
+  min-width: 340px;
+  max-width: 340px;
+  background: #111;
+  border: 1px solid rgba(255,255,255,.14);
+  text-decoration: none;
+  color: white;
+  scroll-snap-align: start;
+  transition: .3s ease;
+}
+
+.museum-card:hover {
+  transform: translateY(-8px);
+  border-color: #10d3d3;
+}
+
+.museum-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.museum-info {
+  padding: 26px;
+}
+
+.museum-info span {
+  color: #10d3d3;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.museum-info h3 {
+  font-size: 31px;
+  margin: 16px 0;
+}
+
+.museum-info p {
+  color: #cfcfcf;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+@media(max-width: 700px) {
+  .museum-page {
+    padding: 80px 28px;
+  }
+
+  .museum-hero h1 {
+    font-size: 52px;
+    letter-spacing: -2px;
+  }
+
+  .museum-card {
+    min-width: 280px;
+    max-width: 280px;
+  }
+}

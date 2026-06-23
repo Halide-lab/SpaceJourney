@@ -74,8 +74,15 @@
   <div class="top-text">SCROLL TO EXPLORE ───</div>
 
   <div class="content museum-title">
-    <h1>Museums &<br>Culture</h1>
-  </div>
+  <h1>Museums &<br>Culture</h1>
+
+  <p class="desc">
+    Explore Amsterdam's most iconic museums,
+    galleries and cultural landmarks.
+  </p>
+
+  <a href="museum.html" class="btn">DISCOVER MUSEUMS →</a>
+</div>
 
   <div class="museum-cards">
     <div class="polaroid">
@@ -102,7 +109,7 @@
   <div class="content left">
     <h1>Coffee<br>Culture</h1>
     <p class="desc">In Amsterdam, coffee isn’t just a caffeine kick; it’s a gezellig moment.</p>
-    <a href="#nature" class="btn">FOLLOW THE AROMA →</a>
+    <a href="category.html?type=coffee" class="btn">FOLLOW THE AROMA →</a>
   </div>
 
   <div class="cards coffee-cards">
@@ -127,7 +134,7 @@
     <p class="kicker">THE CITY'S LUNG</p>
     <h1>Nature</h1>
     <p class="desc">Escape the cobblestones. Amsterdam’s green heartbeat offers a sanctuary.</p>
-    <a href="#dining" class="btn">FOLLOW THE NATURE →</a>
+    <a href="category.html?type=nature" class="btn">FOLLOW THE NATURE →</a>
   </div>
 
   <div class="cards nature-card">
@@ -149,7 +156,7 @@
     <h1>Curated<br>Dining</h1>
     <p class="kicker handwritten">Restaurant Recommendations</p>
     <p class="desc">"A glasshouse sanctuary where the morning’s harvest becomes the evening’s masterpiece."</p>
-    <a href="#experiences" class="btn">DISCOVER RESTAURANTS →</a>
+    <a href="category.html?type=dining" class="btn">DISCOVER RESTAURANTS →</a>
   </div>
 
   <div class="cards dining-cards">
@@ -173,7 +180,7 @@
   <div class="content left">
     <h1>Experiences</h1>
     <p class="desc">Beyond the museums lie the moments that define a city. Explore canals, paths and hidden rhythms.</p>
-    <a href="#hidden" class="btn">DISCOVER ACTIVITIES →</a>
+    <a href="category.html?type=experiences" class="btn">DISCOVER ACTIVITIES →</a>
   </div>
 
   <div class="cards exp-card">
@@ -194,7 +201,7 @@
     <p class="kicker">OFF THE BEATEN CANAL</p>
     <h1>Hidden<br>Gems</h1>
     <p class="desc">Beyond the tourist trails lie Amsterdam's best-kept secrets.</p>
-    <a href="#share" class="btn">FOLLOW YOUR HEART →</a>
+    <a href="category.html?type=hidden" class="btn">FOLLOW YOUR HEART →</a>
   </div>
 
   <div class="cards hidden-cards">
@@ -238,6 +245,20 @@
     <button type="button">SUBMIT RECOMMENDATION</button>
   </form>
 
+  <div class="recommendation-wall">
+
+  <div class="wall-header">
+    <h3>Community Recommendations</h3>
+
+    <span id="seeAllBtn">
+      See all recommendations for Amsterdam →
+    </span>
+  </div>
+
+  <div id="bubbleContainer"></div>
+
+</div>
+
   <div class="cards share-cards">
     <div class="polaroid">
       <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=900" alt="">
@@ -247,6 +268,17 @@
     </div>
   </div>
 </section>
+
+<div id="recommendationPanel" class="recommendation-panel">
+
+  <div class="panel-header">
+    <h2>Amsterdam Recommendations</h2>
+    <span id="closePanel">✕</span>
+  </div>
+
+  <div id="recommendationList"></div>
+
+</div>
 
 </main>
 
